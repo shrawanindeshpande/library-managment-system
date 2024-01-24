@@ -1,4 +1,4 @@
-package com.example.librarymangementsystem;
+package com.example.librarymangementsystem.Enum;
 
 public enum CardStatus {
     ACTIVE,
