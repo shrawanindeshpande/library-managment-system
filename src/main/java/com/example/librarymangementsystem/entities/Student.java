@@ -22,4 +22,7 @@ public class Student {
     private String branch;
     private float cgpa;
     private String phoneNo;
+
+    @OneToOne(mappedBy = "student",cascade = CascadeType.ALL)
+    private LibraryCard libraryCard;
 }

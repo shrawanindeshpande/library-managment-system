@@ -3,11 +3,16 @@ package com.example.librarymangementsystem.entities;
 import com.example.librarymangementsystem.Enum.Genre;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Date;
 
 @Entity
 @Table
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
@@ -26,4 +31,11 @@ public class Book {
     @ManyToOne
     private Author author;
 
+    public Book(String bookName, Genre genre, int noOfPages, int price, Date publishDate) {
+        this.bookName = bookName;
+        this.genre = genre;
+        this.noOfPages = noOfPages;
+        this.price = price;
+        this.publishDate = publishDate;
+    }
 }
