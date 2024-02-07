@@ -32,4 +32,15 @@ public class StudentController {
 
     }
 
+    @DeleteMapping("/deleteStudent")
+    public ResponseEntity deleteStudent(@RequestParam("studentId") int studentId){
+        try{
+            String result=studentService.deleteStudent(studentId);
+            return new ResponseEntity<>(result,HttpStatus.OK);
+        }
+        catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }
